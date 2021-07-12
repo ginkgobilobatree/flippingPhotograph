@@ -1,0 +1,75 @@
+@font-face {
+    font-family: myFont;
+    src: url(/assets/ZCOOLXiaoWei-Regular.ttf);
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: myFont;
+    color: #fff;
+    background-image: radial-gradient(circle, gray, #8f7575, #412020);
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 7rem;
+    margin: 3rem 0 6rem 0;
+    text-shadow: -3px 0 10px #502727, 0 2px #000;
+}
+
+.flip-container {
+	perspective: 1500px;
+}
+
+ .flip-container:hover .flipper {
+	transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+	width: 50rem;
+	height: 70rem;
+}
+
+.flipper {
+	transition: 3s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+.front, .back {
+    box-shadow: 2px 2px 10px #502727;
+    background-size: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.front {
+	z-index: 2;
+	transform: rotateY(0deg);
+    background-image: url(/assets/fujiBack.jpg);
+}
+
+.back {
+	transform: rotateY(180deg);
+    background-image: url(/assets/mountaineering.jpg);
+    filter:sepia(.4)
+}
